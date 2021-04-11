@@ -1,0 +1,46 @@
+# Proposal
+
+## What will (likely) be the title of your project?
+
+The Wanderer: A Choose Your Own Adventure Game
+
+## In just a sentence or two, summarize your project. (E.g., "A website that lets you buy and sell stocks.")
+
+A choose your own adventure/text adventure game about a character trying to survive in the world they wake up in. 
+
+## In a paragraph or more, detail your project. What will your software do? What features will it have? How will it be executed?
+
+The software will take user input and use this to make decisions to advance the story. Text will appear at the beginning to establish exposition, and will appear at
+different points to intertwine story points with the player's choices. Features will include an interactive narrative with the player ultimately deciding their fate,
+with different characters to meet and possible enemies to encounter. This will be executed using different functions that, when called, will progress the story in 
+different ways. 
+
+## If planning to combine 1051's final project with another course's final project, with which other course? And which aspect(s) of your proposed project would relate to 1051, and which aspect(s) would relate to the other course?
+
+Not applicable
+
+## If planning to collaborate with 1 or 2 classmates for the final project, list their names, email addresses, and the names of their assigned TAs below.
+
+Not applicable
+
+## In the world of software, most everything takes longer to implement than you expect. And so it's not uncommon to accomplish less in a fixed amount of time than you hope.
+
+### In a sentence (or list of features), define a GOOD outcome for your final project. I.e., what WILL you accomplish no matter what?
+
+A good outcome would be creating a full text adventure game with multiple paths that lead to different outcomes for a wide variety of replayability. 
+
+### In a sentence (or list of features), define a BETTER outcome for your final project. I.e., what do you THINK you can accomplish before the final project's deadline?
+
+A better outcome for my final project would be, in addition to the story, to have enemy encounters and a health system that uses the import random module to allow
+for a random percentage of the player's health to be deducted when applicable. Additionally, items can be found to regain health at certain points. 
+
+### In a sentence (or list of features), define a BEST outcome for your final project. I.e., what do you HOPE to accomplish before the final project's deadline?
+
+The best outcome would be creating a full game with working graphics using pygame. 
+
+## In a paragraph or more, outline your next steps. What new skills will you need to acquire? What topics will you need to research? If working with one of two classmates, who will do what?
+
+The next step is to combine the ideas I have to code a cohesive story. Making sure each chosen outcome lines up and does not create errors will be important to the 
+structure of the game. Because a lot of user input will be taken, I will need to research creating dictionaries and storing different values to be accessed. I also
+need to ensure that the user input can be recognized by the program. I will also be doing research in finding the most effective ways to use my loops and if statements 
+so I can keep my code clean and easier for debugging.

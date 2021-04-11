@@ -13,7 +13,7 @@ A choose your own adventure/text adventure game about a character trying to surv
 The software will take user input and use this to make decisions to advance the story. Text will appear at the beginning to establish exposition, and will appear at
 different points to intertwine story points with the player's choices. Features will include an interactive narrative with the player ultimately deciding their fate,
 with different characters to meet and possible enemies to encounter. This will be executed using different functions that, when called, will progress the story in 
-different ways. 
+different ways. If else statements and while loops will be used to simulate and distinguish different outcomes.  
 
 ## If planning to combine 1051's final project with another course's final project, with which other course? And which aspect(s) of your proposed project would relate to 1051, and which aspect(s) would relate to the other course?
 

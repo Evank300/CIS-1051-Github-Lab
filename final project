@@ -1,0 +1,440 @@
+## Evan Kunkle
+## Senior
+## CIS 1051 Final Project
+
+
+## user input
+choice_1 = ["1", "one", "One"]
+choice_2 = ["2", "two", "Two"]
+choice_3 = ["3", "three", "Three"]
+yes = ["Y", "y", "yes", "Yes"]
+no = ["N", "n", "no", "No"]
+invalid = (" Invalid Answer ")
+
+import random
+
+
+def open():
+    print("\nThe Wanderer: A Choose Your Own Text Adventure Game")
+    print("\nYou will be asked to enter a number or answer yes/no to advance")
+    print("Are you ready to begin? Y/N ")
+    option = input(" ")
+    if option in yes:
+        print("\nGreat, let's begin\n")
+        part1()
+    elif option in no:
+        print("Okay, maybe some other time")
+    else:
+        print(invalid)
+        open()
+
+def part1():
+    print("You open your eyes but still can't see anything. Your head hurts and you feel like you've been punched in the stomach. You can only see a small stream of light coming through a crack in the foundation of whatever you're in. It is extremely hot.\n")
+    print("What do you do next?")
+    print("1. Feel around for an exit")
+    print("2. Scream")
+    option = input(" ")
+    if option in choice_1:
+        part2()
+    elif option in choice_2:
+        print("\nNo one seems to hear you, and you now realize how dry your throat is.\n")
+        part1()
+    else:
+        print(invalid)
+        part1()
+
+def part2():
+    print("\nYou feel the walls. You can tell they are made of wood. The structure you are in can't be more than 8 feet wide. You try to stand but hit your head on the ceiling. Finally, you feel an opening leading out of the container.\n ")
+    print("You step out and observe your surroundings. The container you were in looks like a cellar of some sort. You dont remember anything up until this moment.\n ")
+    print("The air is dry. You sense it hasn't rained in awhile. Cracked dirt and sand make up the surrounding area. There is minimal shade.\n")
+    print("Might as well start walking. A path in front of you leads two directions. Which way would you like to go?")
+    print("1. Left")
+    print("2. Right")
+    option = input(" ")
+    if option in choice_1:
+        left()
+    elif option in choice_2:
+        right()
+    else:
+        print(invalid)
+        part2()
+
+def left():
+    print("\nYou turn left and walk. The path ahead is flat and the humidity is almost unbearable. You're in the desert, but how did you get here?\n")
+    print("After walking for some time, you notice a figure in the distance. Upon further inspection you notice a pack of wild dogs.")
+    print("Just as you are about to back away, one dog sees you.")
+    print("\nWhat do you do?")
+    print("1. Run")
+    print("2. Hide")
+    option = input(" ")
+    if option in choice_1:
+        print("\nYour attempt to outrun the dogs fails and you are shredded. Your adventure is over.")
+        print("\nWould you like to restart? Y/N")
+        option = input(" ")
+        if option in yes:
+            open()
+        elif option in no:
+            print("Goodbye")
+        else:
+            print(invalid)
+            left()
+    elif option in choice_2:
+        print("\nYou duck behind a rock. After remaining still for a minute, you peak over.")
+        print("The dogs have forgot about you and moved on.\n")
+        left2()
+    else:
+        print(invalid)
+        left()
+
+def right():
+    print("\nYou turn right and walk. The path ahead is flat and the humidity is almost unbearable. You're in the desert, but how did you get here?\n")
+    print("After what must be an hour, you come across what appears to be a small encampment.")
+    print("There are some tents and a fire pit, but no one seems to be around.")
+    print("From a distance you can see bottles of clear liquid and cans that appear to contain food.\n")
+    print("What do you do?")
+    print("1. Take the supplies")
+    print("2. Continue walking")
+    print("3. Shout to anyone nearby")
+    option = input(" ")
+    if option in choice_1:
+        steal()
+    elif option in choice_2:
+        right2()
+    elif option in choice_3:
+        print("\nYou shout 'Hello?' but no one answers. You are still very thirsty.")
+        right()
+    else:
+        print(invalid)
+        right()
+
+def steal():
+    print("\nYou walk over to the camp.")
+    print("There are two bottles laying on the ground, containing what you hope to be water.\n")
+    print("What do you do?")
+    print("1. Drink from one of the bottles")
+    print("2. Change your mind and continue walking.")
+    option = input(" ")
+    if option in choice_1:
+        steal2()
+    elif option in choice_2:
+        right2()
+    else:
+        print(invalid)
+        steal()
+
+def steal2():
+    print("\n'Freeze!' someone yells from behind you. You turn and see a group of three men and a woman. Two of the men have guns pointed at you.")
+    print("\n'What do you think you're doing?'")
+    print("1. Appologize")
+    print("2. Run")
+    option = input(" ")
+    if option in choice_1:
+        print("\n'I'm sorry.' you plead. 'I've had a medical episode and can't seem to remember anything. I walked for miles and just wanted something to drink.'")
+        name()
+    elif option in choice_2:
+        print("\nOne of the men hesitates, then fires. You do not get very far.")
+        print("Your adventure is over.")
+        print("\nWould you like to restart? Y/N")
+        option = input(" ")
+        if option in yes:
+            open()
+        elif option in no:
+            print("Goodbye")
+        else:
+            print(invalid)
+            steal2()
+    else:
+        print(invalid)
+        steal2()
+
+def name():
+    print("The group stares at you, then lowers their weapons.")
+    print("\n'What's your name?' the woman asks.")
+    print("1. Choose your name")
+    print("2. Give them a random name")
+    option = input(" ")
+    if option in choice_1:
+        nameinput()
+    elif option in choice_2:
+        namerandom()
+    else:
+        print(invalid)
+        name()
+
+def nameinput():
+    print("\nEnter your name")
+    name = input(" ")
+    print(name, ",you tell them.")
+    print("Well", name, "one of the men says, 'It seems like you're down on your luck. Why don't you take some water and get out of here.'")
+    print("You thank the group and continue down the path.")
+    right2()
+
+def namerandom():
+    names = ['William', 'Sophia', 'Elijah', 'James', 'Mason', 'Ethan', 'Grace', 'Anna', 'Sean', 'Siva', 'Selena', 'Willow', 'Nicholas']
+    randname = random.choice(names)
+    print("'My name is", randname, "'you tell them.")
+    print("Well", randname, "one of the men says, 'It seems like you're down on your luck. Why don't you take some water and get out of here.'")
+    print("You thank the group and continue down the path.")
+    right2()
+
+def right2():
+    print("\nYou continue to walk.")
+    print("Eventually, you come across a gated community. There is a 20 foot wall surrounding the community on all sides.")
+    print("As you approach, you see two men guarding the front gate. They are both carrying rifles.")
+    print("What would you like to do?")
+    print("1. Ask them for assistance")
+    print("2. Keep walking")
+    option = input(" ")
+    if option in choice_1:
+        print("\n'Would you be able to help?' you ask. 'I don't really have a place to go or anywhere to stay.'")
+        print("The two men look at you suspiciously, then grin at each other.")
+        print("'Yeah sure we can help,' one of them says. 'Follow me.'")
+        kidnap()
+    elif option in choice_2:
+        print("The men look shady, and you decide it is best if you continue walking.")
+        right3()
+    else:
+        print(invalid)
+        right2()
+
+def kidnap():
+    print("\nThey take you inside the walls of the camp.")
+    print("You see men working hard in the fields, and the women and children are baking and cleaning.")
+    print("You realize the community is a work camp, and you live the rest of your days working nonstop for the man.")
+    print("\nWould you like to restart? Y/N")
+    option = input(" ")
+    if option in yes:
+        open()
+    elif option in no:
+        print("Goodbye")
+    else:
+        print(invalid)
+        right2()
+
+def right3():
+    print("\nAs you walk away you hear screams from inside the camp. You are greatful you did not ask them for assistance.")
+    print("It is starting to get dark, and you need to find shelter soon.")
+    print("What do you do?")
+    print("1. Try to start a fire and camp outside for the night.")
+    print("2. Continue walking")
+    option = input(" ")
+    if option in choice_1:
+        print("After what seems like an eternity, you get a fire started.")
+        print("As you are getting comfortable, you hear howling in the distance.")
+        print("Suddenly, a group of 4 wild dogs appear. They must be attracted to the fire.")
+        print("\nYour attempt shelter for the night fails and you are shredded by the dogs. Your adventure is over.")
+        print("\nWould you like to restart? Y/N")
+        option = input(" ")
+        if option in yes:
+            open()
+        elif option in no:
+            print("Goodbye")
+        else:
+            print(invalid)
+            right3()
+    elif option in choice_2:
+        print("You muster the last of your remaining strength to try to walk and find a safer place for the night.")
+        right4()
+    else:
+        print(invalid)
+        right3()
+
+def right4():
+    print("\nJust as you are about to give up, you hear voices in the distance. As you get closer you see light.")
+    print("You arrive at a community of sorts, much less initimadting than the last one you encountered")
+    print('What do you do?')
+    print("1. Approach the community")
+    print("2. Continue walking")
+    option = input(" ")
+    if option in choice_1:
+        print("\nYou stagger towards the camp. Two women notice you and immediately rush to your aid.")
+        print("'You look awful!' one of them says. 'Why don't you sit down.'")
+        print("You learn the group is a posse of traveling musicians, and they happily let you join their company.")
+        print("You spend the rest of your days happily as a fiddle player, with no memory of your previous life.")
+        print("\nThanks for playing! Would you like to play again? Y/N")
+        option = input(" ")
+        if option in yes:
+            open()
+        elif option in no:
+            print("Goodbye")
+        else:
+            print(invalid)
+            right4()
+    elif option in choice_2:
+        print("\nYou decide not to disturb them, and continue walking.")
+        print("You only get another mile down the road before you collapse from exhaustion.")
+        print("Your adventure is over. Would you like to restart? Y/N")
+        option = input(" ")
+        if option in yes:
+            open()
+        elif option in no:
+            print("Goodbye")
+        else:
+            print(invalid)
+            right4()
+    else:
+        print(invalid)
+        right4()
+
+
+def left2():
+    print("\nYou continue to walk.")
+    print("After some time, you come across a woman standing on the side of the road.")
+    print("She has a table full of supplies and you see two horses attached to a hitching post behind her.")
+    print("'Hello' she greets you as you approach. 'Care to buy something?'")
+    print("\nYou look at her selection of goods. What stands out the most is a canteen full of water.")
+    print("'Whats your name stranger?' she asks. 'Don't think I've seen you around here before.'")
+    print("1. Choose your name")
+    print("2. Give her a random name")
+    option = input(" ")
+    if option in choice_1:
+        nameinput2()
+    elif option in choice_2:
+        namerandom2()
+    else:
+        print(invalid)
+        left2()
+  
+def nameinput2():
+    print("\nEnter your name")
+    name = input(" ")
+    print(name, ",you tell them.")
+    print("\nWell", name, "she says, 'It seems like you're down on your luck. Why don't you take some water free of charge.'")
+    print("You thank her.")
+    left3()
+    
+def namerandom2():
+    names = ['William', 'Sophia', 'Elijah', 'James', 'Mason', 'Ethan', 'Grace', 'Anna', 'Sean', 'Siva', 'Selena', 'Willow', 'Nicholas']
+    randname = random.choice(names)
+    print("'My name is", randname, "'you tell her.")
+    print("Well", randname, "she says, 'It seems like you're down on your luck. Why don't you take some water free of charge.'")
+    print("You thank her.")
+    left3()
+
+def left3():
+    print("\n'Can I ask you some questions?' you ask the woman.")
+    print("'Sure, go ahead' she responds.")
+    print("What would you like to ask?")
+    print("1. Where am I?")
+    print("2. Do you know any place I could spend the night?")
+    print("3. Do you know why I can't remember anything?")
+    option = input(" ")
+    if option in choice_1:
+        print("'You're in the Mojave Desert, one of the hottest places in North America,' she responds.")
+        print("'That's why I gave you that water, won't survive much longer out here without it.")
+        print("\nWould you like to ask anything else? Y/N")
+        option = input(" ")
+        if option in yes:
+            print("What would you like to ask?")
+            left3()
+        elif option in no:
+            left4()
+        else:
+            print(invalid)
+            left3()
+    elif option in choice_2:
+        print("'Theres a motel a couple miles down the road,' she says. 'Tell them Fran sent you and you should get a room for at least tonight.'")
+        print("\nWould you like to ask anything else? Y/N")
+        option = input(" ")
+        if option in yes:
+            print("What would you like to ask?")
+            left3()
+        elif option in no:
+            left4()
+        else:
+            print(invalid)
+            left3()
+    elif option in choice_3:
+        print("'Can't help you with that one,' she says.")
+        print("'You aren't the first person I've encoutered this week that can't remember anything,' she tells you.")
+        print("'A man came this way yesterday saying he's not sure where he is or who he is. I thought he was on drugs or something,' she reveals.")
+        print("\nWould you like to ask anything else? Y/N")
+        option = input(" ")
+        if option in yes:
+            print("What would you like to ask?")
+            left3()
+        elif option in no:
+            left4()
+        else:
+            print(invalid)
+            left3()
+
+def left4():
+    print("\n'Thanks for the information,' you tell her. 'You've been a big help.'")
+    print("You continue down the path.")
+    print("It is starting to get dark, and you need to find shelter soon.")
+    print("What do you do?")
+    print("1. Try to start a fire and camp outside for the night.")
+    print("2. Continue walking")
+    option = input(" ")
+    if option in choice_1:
+        print("After what seems like an eternity, you get a fire started.")
+        print("As you are getting comfortable, you hear howling in the distance.")
+        print("Suddenly, a group of 4 wild dogs appear. They must be attracted to the fire.")
+        print("\nYour attempt shelter for the night fails and you are shredded by the dogs. Your adventure is over.")
+        print("\nWould you like to restart? Y/N")
+        option = input(" ")
+        if option in yes:
+            open()
+        elif option in no:
+            print("Goodbye")
+        else:
+            print(invalid)
+            left4()
+    elif option in choice_2:
+        print("You muster the last of your remaining strength to try to walk and find a safer place for the night.")
+        leftfinal()
+    else:
+        print(invalid)
+        left4()
+
+def leftfinal():
+    print("\nYou continue walking. Exhausted, you come across a motel. This must be what Fran was talking about.")
+    print("You enter the motel. 'Fran sent me,' you tell the woman behind the front desk.")
+    print("'She's great isn't she?' the woman asks. 'She's always sending travelers our way.'")
+    print("'You can have the room on us tonight, but if you want it tomorrow you'll need to pay.'")
+    print("You thank her and move away from the front desk.")
+    print("\nAs you are about to go to find your room, you decide to settle in the lobby for a minute.")
+    print("After a moment, a man appears. You feel he is vaugely familiar.")
+    print("'Hey!' he says a name directed at you, but you don't recognize it.")
+    print("'We've been looking all over for you? What happened?' he asks.")
+    print("What do you say?")
+    print("1. Play along")
+    print("2. Tell him you have no idea who he is")
+    option = input(" ")
+    if option in choice_1:
+        print("You counter by asking him why no one came and found you.")
+        print("'We had search parties out the last two days,' he says. 'After you got separated we didn't know where they might have taken you or if you were still alive.'")
+        print("Through conversation, you learn he is your squad commander, and you were separated from your group when the enemy attacked.")
+        print("You are commended for your bravery and are promoted to an intelligence position so you no longer have to be in the field of duty.")
+        print("You live out the rest of your days happy with a rather large salary.")
+        print("\nYou have made it to the end! Thanks for playing! Would you like to play again? Y/N")
+        option = input(" ")
+        if option in yes:
+            open()
+        elif option in no:
+            print("Goodbye")
+        else:
+            print(invalid)
+            leftfinal()
+    elif option in choice_2:
+        print("'I have no idea who you are,' you say.")
+        print("\nHe explains the situation to you. You are part of a military group designed to patrol the desert for crime.")
+        print("You got raided by the enemy, and many members of your patrol, including yourself, got separated.")
+        print("You must have hit your head which caused short term memory loss.")
+        print("After a few days on the mend, you regain your memory.")
+        print("You continue the rest of your life as a soldier dedicating yourself to keeping civillians safe.")
+        print("\nYou have made it to the end! Thanks for playing! Would you like to play again? Y/N")
+        option = input(" ")
+        if option in yes:
+            open()
+        elif option in no:
+            print("Goodbye")
+        else:
+            print(invalid)
+            leftfinal()
+    else:
+        print(invalid)
+        leftfinal()
+  
+open()
